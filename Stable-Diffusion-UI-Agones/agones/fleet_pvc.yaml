@@ -54,3 +54,16 @@ spec:
             - name: stable-diffusion-storage
               persistentVolumeClaim:
                 claimName: vol1
+                
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: vol1
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: filestore-example
+  resources:
+    requests:
+      storage: 1Ti                
